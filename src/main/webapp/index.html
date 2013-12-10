@@ -5,19 +5,15 @@
 	<script type="text/javascript" src="scripts/compiled_template.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("button").click(function() {
-				$.get("rest/books", function (data, status) {
-					alert("data: " + data + "\nstatus: " + status);
-				}, "json");
-			});
-			dust.render("intro", {name: "Fred"}, function(err, out) {
-				$("body").append(out);
-			});
+			$.get("rest/books", function (data, status) {
+				dust.render("intro", data, function(err, out) {
+					$("body").append(out);
+				});
+			}, "json");
 		});
 	</script>
 </head>
 
 <body>
-	<button>Click Me</button>
 </body>
 </html>

@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Book {
+	private String id;
 	private String name;
 	private String author;
 	
@@ -11,7 +12,8 @@ public class Book {
 		//do nothing
 	}
 	
-	public Book(String name, String author) {
+	public Book(String id, String name, String author) {
+		this.id = id;
 		this.name = name;
 		this.author = author;
 	}
@@ -32,5 +34,13 @@ public class Book {
 	@Override
 	public String toString() {
 		return "[" + name + ", " + author + "]";
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }
