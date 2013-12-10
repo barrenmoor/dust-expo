@@ -1,10 +1,12 @@
 <table border="1" cellpadding="2" cellspacing="0">
 <tr>
+	<th>&nbsp;</th>
 	<th>Name</th>
 	<th>Author</th>
 </tr>
 {#values}
 <tr id="{id}">
+	<td><input type="radio" id="{id}" name="delete" value="{id}"/></td>
 	<td>{name}</td>
 	<td>{author}</td>
  </tr>

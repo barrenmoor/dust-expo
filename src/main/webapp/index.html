@@ -3,11 +3,12 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/dust-core.min.js"></script>
 	<script type="text/javascript" src="scripts/compiled_template.js"></script>
+	<script type="text/javascript" src="scripts/bookservice.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$.get("rest/books", function (data, status) {
 				dust.render("intro", data, function(err, out) {
-					$("body").append(out);
+					$("#booksDiv").append(out);
 				});
 			}, "json");
 		});
@@ -15,5 +16,9 @@
 </head>
 
 <body>
+	<div id="booksDiv"></div>
+	<div id="booksControls">
+		<input type="button" onclick="deleteBook()" value="Delete"/>
+	</div>
 </body>
 </html>
