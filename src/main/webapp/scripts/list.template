@@ -1,2 +1,12 @@
-Hello {name}!
-
+<table border="1" cellpadding="2" cellspacing="0">
+<tr>
+	<th>Name</th>
+	<th>Author</th>
+</tr>
+{#values}
+<tr id="{id}">
+	<td>{name}</td>
+	<td>{author}</td>
+ </tr>
+{/values}
+</table>
