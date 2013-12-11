@@ -1,9 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/dust-core.min.js"></script>
-	<script type="text/javascript" src="scripts/compiled_template.js"></script>
-	<script type="text/javascript" src="scripts/bookservice.js"></script>
+	<script type="text/javascript" src="scripts/thirdparty/dust-core.min.js"></script>
+	<script type="text/javascript" src="scripts/_booklist.js"></script>
+	<script type="text/javascript" src="scripts/controller.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$.get("rest/books", function (data, status) {
@@ -19,6 +21,7 @@
 	<div id="booksDiv"></div>
 	<div id="booksControls">
 		<input type="button" onclick="deleteBook()" value="Delete"/>
+		<input type="button" onclick="editBook()" value="Edit"/>
 	</div>
 </body>
 </html>

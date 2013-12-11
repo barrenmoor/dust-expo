@@ -20,3 +20,11 @@ var deleteBook = function() {
 		}
 	});
 };
+
+var editBook = function() {
+	var id = $("input[name=delete]:checked").val();
+	
+	if(!id) {
+		return;
+	}
+};
