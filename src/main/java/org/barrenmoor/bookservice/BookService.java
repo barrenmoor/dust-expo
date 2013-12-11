@@ -8,6 +8,8 @@ import java.util.UUID;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -56,5 +58,45 @@ public class BookService {
 		}
 		
 		throw new WebApplicationException(Status.NOT_FOUND);
+	}
+
+	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response get(@PathParam("id") String id) {
+		System.out.println("get: " + id);
+		if(books.containsKey(id)) {
+			Book b = books.get(id);
+			return Response.status(Status.OK).entity(b).build();
+		}
+		
+		throw new WebApplicationException(Status.NOT_FOUND);
+	}
+
+	@PUT
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response update(@PathParam("id") String id, Book book) {
+		System.out.println("update: " + id);
+		if(books.containsKey(id)) {
+			book.setId(id);
+			books.put(id, book);
+			return Response.status(Status.OK).entity(book).build();
+		}
+		
+		throw new WebApplicationException(Status.NOT_FOUND);
+	}
+
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response create(Book book) {
+		System.out.println("create: " + book);
+		String id = UUID.randomUUID().toString();
+		book.setId(id);
+		books.put(id, book);
+		return Response.status(Status.CREATED).header("Location", id).entity(book).build();
 	}
 }

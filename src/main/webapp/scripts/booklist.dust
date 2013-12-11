@@ -1,14 +1,30 @@
-<table border="1" cellpadding="2" cellspacing="0">
-<tr>
-	<th>&nbsp;</th>
-	<th>Name</th>
-	<th>Author</th>
-</tr>
-{#values}
-<tr id="{id}">
-	<td><input type="radio" id="{id}" name="delete" value="{id}"/></td>
-	<td>{name}</td>
-	<td>{author}</td>
-</tr>
-{/values}
-</table>
+<div id="booksDiv">
+	<table border="1" cellpadding="2" cellspacing="0">
+	<tr>
+		<th>&nbsp;</th>
+		<th>Name</th>
+		<th>Author</th>
+	</tr>
+	{#values}
+	<tr id="{id}">
+		<td><input type="radio" id="{id}" name="selectbook" value="{id}"/></td>
+		<td>{name}</td>
+		<td>{author}</td>
+	</tr>
+	{/values}
+	</table>
+</div>
+<div id="booksControls">
+	<table border="0" cellpadding="2" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="button" onclick="createBook()" value="Create"/>
+			<input type="button" onclick="editBook()" value="Edit"/>
+			<input type="button" onclick="deleteBook()" value="Delete"/>
+		</td>
+	</tr>
+	</table>
+</div>
