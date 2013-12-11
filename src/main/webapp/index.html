@@ -5,23 +5,16 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/thirdparty/dust-core.min.js"></script>
 	<script type="text/javascript" src="scripts/_booklist.js"></script>
+	<script type="text/javascript" src="scripts/_addedit.js"></script>
 	<script type="text/javascript" src="scripts/controller.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$.get("rest/books", function (data, status) {
-				dust.render("intro", data, function(err, out) {
-					$("#booksDiv").append(out);
-				});
-			}, "json");
+			listBooks();
 		});
 	</script>
 </head>
 
 <body>
-	<div id="booksDiv"></div>
-	<div id="booksControls">
-		<input type="button" onclick="deleteBook()" value="Delete"/>
-		<input type="button" onclick="editBook()" value="Edit"/>
-	</div>
+	<div id="booksMain"></div>
 </body>
 </html>
