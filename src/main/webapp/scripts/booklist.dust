@@ -9,6 +9,6 @@
 	<td><input type="radio" id="{id}" name="delete" value="{id}"/></td>
 	<td>{name}</td>
 	<td>{author}</td>
- </tr>
+</tr>
 {/values}
 </table>

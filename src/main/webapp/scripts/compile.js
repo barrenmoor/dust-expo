@@ -1,9 +1,9 @@
 var fs = require('fs');
 var dust = require('dustjs-linkedin');
-fs.readFile('list.template', 'utf8', function(err, data) {
+fs.readFile('booklist.dust', 'utf8', function(err, data) {
 	if(err) throw err;
 	var compiled = dust.compile(data, "intro");
-	fs.writeFile('compiled_template.js', compiled, function(err) {
+	fs.writeFile('_booklist.js', compiled, function(err) {
 		if(err) {
 			console.log(err);
 		} else {
