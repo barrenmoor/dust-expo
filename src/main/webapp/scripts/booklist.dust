@@ -15,7 +15,7 @@
 		{@if cond="'{name}' == 'A Farewell to Arms'"}
 			Hemingway Book
 		{:else}
-			What to do
+			&nbsp;
 		{/if}
 		</td>
 	</tr>
