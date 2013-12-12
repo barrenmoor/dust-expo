@@ -1,5 +1,6 @@
 var fs = require('fs');
 var dust = require('dustjs-linkedin');
+dust.helper = require('dustjs-helpers');
 var compiler = {
 	items : [{
 		template : 'booklist.dust',
