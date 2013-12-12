@@ -4,12 +4,20 @@
 		<th>&nbsp;</th>
 		<th>Name</th>
 		<th>Author</th>
+		<th>Conditional</th>
 	</tr>
 	{#values}
 	<tr id="{id}">
 		<td><input type="radio" id="{id}" name="selectbook" value="{id}"/></td>
 		<td>{name}</td>
 		<td>{author}</td>
+		<td>
+		{@if cond="'{name}' == 'A Farewell to Arms'"}
+			Hemingway Book
+		{:else}
+			What to do
+		{/if}
+		</td>
 	</tr>
 	{/values}
 	</table>
